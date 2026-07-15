@@ -509,9 +509,9 @@ if (role == "user") {
     const isUsers = path.includes("admin_users.html") ? 'class="active"' : '';
 
     const txt = `<section class="admin-upper-navbar">
-        <a href="./adminPage.html" ${isDashboard}>Dashboard</a>
+        <a href="./admin/adminPage.html" ${isDashboard}>Dashboard</a>
         <a href="../products.html" ${isInventory}>Inventory</a>
-        <a href="./admin_users.html" ${isUsers}>Users</a>
+        <a href="./admin/admin_users.html" ${isUsers}>Users</a>
     </section>`
     uppernavbar.insertAdjacentHTML("afterbegin", txt);
 
