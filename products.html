@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewBuy</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Racing+Sans+One&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <section class="common-header">
+        <img src="../assets/logo.png" alt="Logo" class="logo">
+        <div class="searchArea">
+            <div class="dropdown">
+                <select name="" class="category-dropdown">
+                    <option value="all">All</option>
+                </select>
+            </div>
+            <input type="text" name="search" id="search" placeholder="Search...">
+            <button id="searchBar-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="accountArea">
+            <!-- USER OPTIONS: -->
+            <div class="account-right-top">
+                <img src="" alt="User">
+                <p>Hi </p>
+                <button type="button" id="log-out-button">Log Out</button>
+            </div>
+        </div>
+    </section>
+    <section class="categories-navbar">
+        <div class="visible-categories">
+            <div class="category-navbar" id="all"><a href="#">All</a></div>
+        </div>
+        <div class="more-categories-wrapper">
+            <button class="more-categories-btn"><i class="fa-solid fa-bars"></i></button>
+            <div class="more-categories-dropdown">
+            </div>
+        </div>
+    </section>
+    <aside></aside>
+    <main>
+        <section class="products-grid"></section>
+    </main>
+    <section class="pagination">
+        <button class="prevPage">Previous</button>
+        <p class="pageInfo"></p>
+        <button class="nextPage">Next</button>
+    </section>
+
+    <script src="../js/common.js"></script>
+
+</body>
+
+</html>

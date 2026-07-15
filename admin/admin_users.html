@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewBuy</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="./admin_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <section class="admin-upper-navbar">
+        <a href="../admin/adminPage.html">Dashboard</a>
+        <a href="../products.html">Inventory</a>
+        <a href="../admin/admin_users.html" class="active">Users</a>
+    </section>
+    <section class="common-header">
+        <img src="../assets/logo.png" alt="Logo" class="logo">
+        <div class="searchArea" style="justify-content: center;">
+            <a href="../products.html"
+                style="text-decoration: none; font-weight: bold; color: #2563eb; font-size: 16px;">Manage Inventory</a>
+        </div>
+        <div class="accountArea">
+            <div class="account-right-top">
+                <img src="" alt="User">
+                <p>Hi </p>
+                <button type="button" id="log-out-button">Log Out</button>
+            </div>
+        </div>
+    </section>
+    <h1>Users</h1>
+    <section class="users-analytics">
+        <div class="users-analytics-group">
+            <p>Active Users</p>
+            <p>30</p>
+        </div>
+        <div class="orders-analytics-group">
+            <p>New Users</p>
+            <p>1</p>
+        </div>
+        <div class="orders-analytics-group">
+            <p>Blocked Users</p>
+            <p>0</p>
+        </div>
+    </section>
+    <section class="users-table">
+        <table>
+            <thead>
+                <th>User ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Username</th>
+                <th>Status</th>
+                <th>Action</th>
+            </thead>
+        </table>
+    </section>
+    <footer>
+        <section class="footer-about"></section>
+        <section class="footer-quick-links"></section>
+        <section class="footer-contact-us"></section>
+        <section class="footer-newsletter"></section>
+    </footer>
+    <script src="./admin_script.js"></script>
+
+</body>
+
+</html>

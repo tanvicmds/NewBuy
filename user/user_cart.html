@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewBuy</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="./user_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <section class="common-header">
+        <a href="../products.html">View Products</a>
+        <img src="../assets/logo.png" alt="Logo" class="logo">
+        <div class="accountArea">
+            <div class="wishlist-button">
+                <button id="wishlist-button"><i class="fa-solid fa-heart"></i></button>
+            </div>
+            <div class="cart-button-wrapper">
+                <button id="cart-button"><i class="fa-solid fa-cart-shopping"></i></button>
+                <span class="cart-badge" id="cart-badge">0</span>
+            </div>
+            <div class="account-right-top">
+                <img src="" alt="User">
+                <p>Hi </p>
+                <button id="log-out-button" type="button">Log Out</button>
+            </div>
+        </div>
+    </section>
+    <section class="cart-title">
+        <h1>Shopping Cart</h1>
+        <p>(Grab a look at your <a href="./user_wishlist.html">Wishlist</a><i class="fa-solid fa-heart"></i>)</p>
+    </section>
+    <main class="cart-main-container">
+        <section class="cart-products">
+
+        </section>
+        <section class="checkout section">
+            <h2>Summary</h2>
+            <div class="checkout-total-area">
+                <p>Total Amount:</p>
+                <p id="checkout-total">$0.00</p>
+            </div>
+            <p class="checkout-shipping-note">*Shipping will be calculated at checkout page.</p>
+            <button id="checkoutBtn">Checkout</button>
+        </section>
+    </main>
+    <footer>
+        <section class="footer-about"></section>
+        <section class="footer-quick-links"></section>
+        <section class="footer-contact-us"></section>
+        <section class="footer-newsletter"></section>
+    </footer>
+    <script src="./user_script.js"></script>
+</body>
+
+</html>
