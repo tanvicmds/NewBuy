@@ -64,16 +64,19 @@ function loadUsers(str) {
         });
 }
 
+if (document.getElementById("user-login-submitBtn")) {
+    const userLoginButton = document.getElementById("user-login-submitBtn");
+    userLoginButton.addEventListener("click", () => {
+        loadUsers("user");
+    })
+}
 
-const userLoginButton = document.getElementById("user-login-submitBtn");
-const adminLoginButton = document.getElementById("admin-login-submitBtn");
-
-userLoginButton.addEventListener("click", () => {
-    loadUsers("user");
-})
+if(document.getElementById("admin-login-submitBtn")) {
+    const adminLoginButton = document.getElementById("admin-login-submitBtn");
 adminLoginButton.addEventListener("click", () => {
     loadUsers("admin");
 })
+}
 
 window.addEventListener("pageshow", (event) => {
     if (event.persisted) {
