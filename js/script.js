@@ -43,7 +43,7 @@ function loadUsers(str) {
                         user_wishlist: []
                     }
                     sessionStorage.setItem("userDetails", JSON.stringify(obj));
-                    window.location.href = "./products.html";
+                    window.location.href = "../products.html";
                 })
         })
         .catch(err => {

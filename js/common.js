@@ -494,11 +494,11 @@ if (role == "user") {
     accountArea.insertAdjacentHTML("afterbegin", txt);
     const wishlistBtn = document.getElementById("wishlist-button");
     wishlistBtn.addEventListener("click", () => {
-        window.location.href = "./user/user_wishlist.html";
+        window.location.href = "../user/user_wishlist.html";
     })
     const cartBtn = document.getElementById("cart-button");
     cartBtn.addEventListener("click", () => {
-        window.location.href = "./user/user_cart.html";
+        window.location.href = "../user/user_cart.html";
     })
     updateCartBadge();
 } else {
@@ -509,9 +509,9 @@ if (role == "user") {
     const isUsers = path.includes("admin_users.html") ? 'class="active"' : '';
 
     const txt = `<section class="admin-upper-navbar">
-        <a href="../admin/adminPage.html" ${isDashboard}>Dashboard</a>
+        <a href="./adminPage.html" ${isDashboard}>Dashboard</a>
         <a href="../products.html" ${isInventory}>Inventory</a>
-        <a href="../admin/admin_users.html" ${isUsers}>Users</a>
+        <a href="./admin_users.html" ${isUsers}>Users</a>
     </section>`
     uppernavbar.insertAdjacentHTML("afterbegin", txt);
 
@@ -551,7 +551,7 @@ profileImage.src = userDetails.image;
 const logoutBtn = document.getElementById("log-out-button");
 logoutBtn.addEventListener("click", () => {
     sessionStorage.clear();
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
 });
 
 function showToast(message) {

@@ -239,7 +239,7 @@ function initHeader() {
     const wishlistBtn = document.getElementById("wishlist-button");
     if (wishlistBtn) {
         wishlistBtn.addEventListener("click", () => {
-            window.location.href = "user_wishlist.html";
+            window.location.href = "./user_wishlist.html";
         });
     }
 
