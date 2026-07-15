@@ -551,7 +551,7 @@ profileImage.src = userDetails.image;
 const logoutBtn = document.getElementById("log-out-button");
 logoutBtn.addEventListener("click", () => {
     sessionStorage.clear();
-    window.location.href = "../index.html";
+    window.location.href = "./index.html";
 });
 
 function showToast(message) {
