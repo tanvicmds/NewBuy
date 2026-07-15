@@ -494,7 +494,7 @@ if (role == "user") {
     accountArea.insertAdjacentHTML("afterbegin", txt);
     const wishlistBtn = document.getElementById("wishlist-button");
     wishlistBtn.addEventListener("click", () => {
-        window.location.href = "../user/user_wishlist.html";
+        window.location.href = "./user_wishlist.html";
     })
     const cartBtn = document.getElementById("cart-button");
     cartBtn.addEventListener("click", () => {
