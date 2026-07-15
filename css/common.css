@@ -81,7 +81,7 @@ body {
 
 .wishlisted {
     color: pink;
-    
+
 }
 
 .modal-overlay {
@@ -302,6 +302,7 @@ body {
     cursor: pointer;
     transition: background 0.2s;
     display: flex;
+    gap: 5px;
     justify-content: center;
     align-items: center;
 }
@@ -566,14 +567,14 @@ body {
     overflow-y: auto;
     padding-right: 10px;
     -ms-overflow-style: none;
-    
+
     scrollbar-width: none;
-    
+
 }
 
 .detailed-modal::-webkit-scrollbar {
     display: none;
-    
+
 }
 
 #close-details-modal {
@@ -883,9 +884,6 @@ body {
         order: 1;
     }
 
-    .products-grid {
-        grid-template-columns: 1fr 1fr;
-    }
 
     .detailed-layout {
         flex-direction: column;

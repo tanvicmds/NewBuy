@@ -50,16 +50,39 @@ function loadUsers(str) {
             const btn = document.getElementById(`${str}-login-submitBtn`);
             const uInput = document.getElementById(`${str}-username`);
             const pInput = document.getElementById(`${str}-password`);
-            if (!document.getElementById(`err-${str}`)) {
-                btn.insertAdjacentHTML('beforebegin', `<p id="err-${str}">Invalid credentials</p>`);
+            let errText = "";
+            if (uInput.value == "" && pInput.value == "") {
+                errText = "Enter your credentials to log in";
+                uInput.classList.add('wrong');
+                pInput.classList.add('wrong');
             }
-            uInput.classList.add('wrong');
-            pInput.classList.add('wrong');
+            else if (uInput.value !== "" && pInput.value !== "") {
+                errText = "Invalid credentials";
+                uInput.classList.add('wrong');
+                pInput.classList.add('wrong');
+            }
+            else if (uInput.value == "" && pInput.value !== "") {
+                errText = "Enter your username to log in";
+                uInput.classList.add('wrong');
+            }
+            else if (uInput.value !== "" && pInput.value == "") {
+                errText = "Enter your password to log in";
+                pInput.classList.add('wrong');
+            }
+            if (!document.getElementById(`err-${str}`)) {
+                btn.insertAdjacentHTML('beforebegin', `<p id="err-${str}">${errText}</p>`);
+            } else {
+                document.getElementById(`err-${str}`).innerText = errText;
+            }
             uInput.addEventListener('input', () => {
-                uInput.classList.remove('wrong');
+                if (uInput.classList.contains('wrong')) {
+                    uInput.classList.remove('wrong');
+                }
             });
             pInput.addEventListener('input', () => {
-                pInput.classList.remove('wrong');
+                if (pInput.classList.contains('wrong')) {
+                    pInput.classList.remove('wrong');
+                }
             });
         });
 }
@@ -71,11 +94,11 @@ if (document.getElementById("user-login-submitBtn")) {
     })
 }
 
-if(document.getElementById("admin-login-submitBtn")) {
+if (document.getElementById("admin-login-submitBtn")) {
     const adminLoginButton = document.getElementById("admin-login-submitBtn");
-adminLoginButton.addEventListener("click", () => {
-    loadUsers("admin");
-})
+    adminLoginButton.addEventListener("click", () => {
+        loadUsers("admin");
+    })
 }
 
 window.addEventListener("pageshow", (event) => {
@@ -83,3 +106,21 @@ window.addEventListener("pageshow", (event) => {
         document.querySelectorAll("form").forEach(form => form.reset());
     }
 });
+
+document.querySelector(".customer-icon").addEventListener("click", () => {
+    if (!document.querySelector(".customer-icon").classList.contains("opened")) {
+        document.querySelector(".customer-icon").classList.add("opened");
+        document.querySelector(".admin-icon").classList.remove("opened");
+        document.querySelector(".login-user").classList.remove("hidden");
+        document.querySelector(".login-admin").classList.add("hidden");
+    }
+})
+
+document.querySelector(".admin-icon").addEventListener("click", () => {
+    if (!document.querySelector(".admin-icon").classList.contains("opened")) {
+        document.querySelector(".admin-icon").classList.add("opened");
+        document.querySelector(".customer-icon").classList.remove("opened");
+        document.querySelector(".login-admin").classList.remove("hidden");
+        document.querySelector(".login-user").classList.add("hidden");
+    }
+})

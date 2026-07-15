@@ -34,34 +34,38 @@
             <img src="./assets/logo.png" alt="Logo" class="logo">
             <h2>Welcome Back</h2>
             <p>Sign in to continue shopping or manage your store</p>
-            <p class="customer-icon"><i class="fa-regular fa-user"></i>Customer</p>
-            <div class="login-user">
-                <div class="login-button-user">
-                    <p>
-                        Login as User
-                    </p>
+            <div class="login-wrapper">
+                <div class="role-buttons">
+                    <p class="customer-icon opened"><i class="fa-regular fa-user"></i>Customer</p>
+                    <p class="admin-icon"><i class="fa-solid fa-screwdriver-wrench"></i>Admin</p>
                 </div>
-                <div class="login-form-user">
-                    <form>
-                        <input type="text" id="user-username" placeholder="Username">
-                        <input type="password" id="user-password" placeholder="Password">
-                    </form>
-                    <button type="button" id="user-login-submitBtn">Login</button>
+                <div class="login-user">
+                    <div class="login-button-user">
+                        <p>
+                            Browse Products
+                        </p>
+                    </div>
+                    <div class="login-form-user">
+                        <form>
+                            <input type="text" id="user-username" placeholder="Username">
+                            <input type="password" id="user-password" placeholder="Password">
+                        </form>
+                        <button type="button" id="user-login-submitBtn">Login</button>
+                    </div>
                 </div>
-            </div>
-            <p class="admin-icon"><i class="fa-solid fa-screwdriver-wrench"></i>Admin</p>
-            <div class="login-admin">
-                <div class="login-button-admin">
-                    <p>
-                        Login as Admin
-                    </p>
-                </div>
-                <div class="login-form-admin">
-                    <form>
-                        <input type="text" id="admin-username" placeholder="Username">
-                        <input type="password" id="admin-password" placeholder="Password">
-                    </form>
-                    <button type="button" id="admin-login-submitBtn">Login</button>
+                <div class="login-admin hidden">
+                    <div class="login-button-admin">
+                        <p>
+                            Manage Inventory
+                        </p>
+                    </div>
+                    <div class="login-form-admin">
+                        <form>
+                            <input type="text" id="admin-username" placeholder="Username">
+                            <input type="password" id="admin-password" placeholder="Password">
+                        </form>
+                        <button type="button" id="admin-login-submitBtn">Login</button>
+                    </div>
                 </div>
             </div>
             </div>

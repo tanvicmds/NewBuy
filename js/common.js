@@ -67,7 +67,7 @@ function renderProducts(data) {
 
     productGrid.innerHTML = "";
 
-    if (data.products.length === 0) {
+    if (data.products.length == 0) {
         productGrid.innerHTML = "<p class='empty-wishlist'>No products found.</p>";
         if (pagination) pagination.style.display = "none";
         return;
@@ -417,10 +417,13 @@ function openEditModal(product) {
     })
 }
 
-function loadProducts(searchQuery = "", page = 1, limit = 15, skip = 0) {
-    if (searchQuery) {
+function loadProducts(searchQuery = "", page = 1, limit = 15, skip = 0, category = "") {
+    if (searchQuery && category == "") {
         document.querySelectorAll(".category-navbar").forEach(c => c.classList.remove("active"));
         document.getElementById("all").classList.add("active");
+    } else if (category !== "" && searchQuery !== "") {
+        document.querySelectorAll(".category-navbar").forEach(c => c.classList.remove("active"));
+        document.getElementById(category).classList.add("active");
     }
 
     const productGrid = document.querySelector(".products-grid");
@@ -443,6 +446,20 @@ function loadProducts(searchQuery = "", page = 1, limit = 15, skip = 0) {
     fetch(url)
         .then(res => res.json())
         .then(data => {
+
+            let obj = {
+                products: [],
+                total: 0
+            }
+            if (category !== "") {
+                for (x of data.products) {
+                    if (x.category === category) {
+                        obj.products.push(x);
+                        obj.total += 1;
+                    }
+                }
+                data = obj;
+            }
             totalPages = Math.ceil(data.total / limit);
             renderProducts(data);
         }).then(() => {
@@ -500,7 +517,7 @@ if (!localStorage.getItem("NewBuyUpdatedData")) {
 
 const debouncedSearch = debounce(() => {
     currentSearchQuery = document.getElementById("search").value;
-    loadProducts(currentSearchQuery, 1);
+    loadProducts(currentSearchQuery, 1, 15, 0, dropdownCategory.value);
 }, 500);
 const role = sessionStorage.getItem("role");
 if (role == "user") {
@@ -541,17 +558,21 @@ if (role == "user") {
 
 document.querySelector(".prevPage").addEventListener("click", () => {
     if (currentPage > 1) {
-        loadProducts(currentSearchQuery, currentPage - 1);
+        loadProducts(currentSearchQuery, currentPage - 1, 15, 0, dropdownCategory.value);
     }
 });
 document.querySelector(".nextPage").addEventListener("click", () => {
     if (currentPage < totalPages) {
-        loadProducts(currentSearchQuery, currentPage + 1);
+        loadProducts(currentSearchQuery, currentPage + 1, 15, 0, dropdownCategory.value);
     }
 });
 document.getElementById("searchBar-btn").addEventListener("click", () => {
     currentSearchQuery = document.getElementById("search").value;
-    loadProducts(currentSearchQuery, 1);
+    if (dropdownCategory.value != "All") {
+        loadProducts(currentSearchQuery, 1, 15, 0, dropdownCategory.value);
+    } else {
+        loadProducts(currentSearchQuery, 1);
+    }
 });
 document.getElementById("search").addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
@@ -601,6 +622,8 @@ function showToast(message) {
         }, 300);
     }, 5000);
 }
+
+const dropdownCategory = document.querySelector(".category-dropdown");
 
 
 

@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+
 }
 
 html {
@@ -36,7 +36,7 @@ html {
     height: auto;
     padding: 50px 45px;
     background-color: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 24px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -63,12 +63,12 @@ html {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    border: solid 1px #c0c3dc;
+    gap: 10px;
 }
 
 .login-user {
-    background-color: rgba(217, 219, 240, 0.5);
-
+    background-color: rgba(217, 219, 240, 0.3);
+    border: solid 1px #c0c3dc;
 }
 
 .login-user button {
@@ -84,7 +84,8 @@ html {
 }
 
 .login-admin {
-    background-color: rgba(226, 248, 246, 0.5);
+    background-color: rgba(226, 248, 246, 0.3);
+    border: solid 1px #c0dccf;
 }
 
 .login-button-user a,
@@ -98,13 +99,13 @@ html {
 .login-form-admin {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 .login-form-user input,
 .login-form-admin input {
     width: 100%;
-    padding: 5px 8px;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 20px;
     outline: none;
@@ -121,7 +122,7 @@ html {
 }
 
 .login-area i {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.3);
     padding: 10px;
     display: inline-flex;
     align-items: center;
@@ -132,18 +133,63 @@ html {
     height: 30px;
 }
 
+.login-wrapper {
+    background-color: rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 50px 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    backdrop-filter: blur(5px);
+    border: 1px solid #f4f2fa66;
+}
+
+.role-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    padding-right: 35px;
+}
+
+.hidden {
+    display: none;
+}
+
 .customer-icon {
     color: #0c259f;
     font-style: italic;
     font-weight: 600;
     font-size: 20px;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 999px;
+    text-wrap: nowrap;
+    cursor: pointer;
 }
 
 .admin-icon {
+    padding-left: 10px;
+    text-wrap: nowrap;
     color: #1d645c;
     font-style: italic;
+    padding: 10px 5px;
     font-weight: 600;
     font-size: 20px;
+    text-decoration: none;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.customer-icon.opened {
+    border-right: rgb(23, 61, 167) solid 1px;
+    background: linear-gradient(to right, rgb(255, 255, 255, 0), rgb(23, 61, 167, 0.4));
+}
+
+.admin-icon.opened {
+    border-left: rgb(24, 120, 76) solid 1px;
+    background: linear-gradient(to left, rgb(255, 255, 255, 0), rgb(24, 120, 76, 0.4));
 }
 
 .login-area h2 {
@@ -152,11 +198,11 @@ html {
     color: #0d4467;
 }
 
-.login-area p:first-of-type {
+/* .login-area p:first-of-type {
     text-align: center;
     color: rgb(52, 50, 50);
 
-}
+} */
 
 .login-form-user form,
 .login-form-admin form {
