@@ -510,7 +510,7 @@ if (role == "user") {
 
     const txt = `<section class="admin-upper-navbar">
         <a href="./admin/adminPage.html" ${isDashboard}>Dashboard</a>
-        <a href="../products.html" ${isInventory}>Inventory</a>
+        <a href="./products.html" ${isInventory}>Inventory</a>
         <a href="./admin/admin_users.html" ${isUsers}>Users</a>
     </section>`
     uppernavbar.insertAdjacentHTML("afterbegin", txt);
@@ -551,7 +551,7 @@ profileImage.src = userDetails.image;
 const logoutBtn = document.getElementById("log-out-button");
 logoutBtn.addEventListener("click", () => {
     sessionStorage.clear();
-    window.location.href = "./index.html";
+    window.location.href = "../index.html";
 });
 
 function showToast(message) {
