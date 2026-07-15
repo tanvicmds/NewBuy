@@ -62,8 +62,19 @@ function categoryLoading() {
 
 function renderProducts(data) {
     const productGrid = document.querySelector(".products-grid");
+    const pagination = document.querySelector(".pagination");
+    const pageInfo = document.querySelector(".pageInfo");
+
     productGrid.innerHTML = "";
-    const flatUpdatedData = JSON.parse(localStorage.getItem("NewBuyUpdatedData")).flat();
+
+    if (data.products.length === 0) {
+        productGrid.innerHTML = "<p class='empty-wishlist'>No products found.</p>";
+        if (pagination) pagination.style.display = "none";
+        return;
+    }
+
+    if (pagination) pagination.style.display = "flex";
+    const flatUpdatedData = JSON.parse(localStorage.getItem("NewBuyUpdatedData") || "[]").flat();
     data.products.forEach((item) => {
         const product = {};
         if (flatUpdatedData.includes(item.id)) {
@@ -411,6 +422,17 @@ function loadProducts(searchQuery = "", page = 1, limit = 15, skip = 0) {
         document.querySelectorAll(".category-navbar").forEach(c => c.classList.remove("active"));
         document.getElementById("all").classList.add("active");
     }
+
+    const productGrid = document.querySelector(".products-grid");
+    const pagination = document.querySelector(".pagination");
+    const pageInfo = document.querySelector(".pageInfo");
+
+    if (productGrid) {
+        productGrid.innerHTML = "<p class='empty-wishlist'>Loading products...</p>";
+    }
+    if (pagination) pagination.style.display = "flex";
+    if (pageInfo) pageInfo.textContent = "Loading...";
+
     currentPage = page;
     document.querySelector(".nextPage").disabled = false;
     document.querySelector(".prevPage").disabled = false;

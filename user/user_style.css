@@ -193,6 +193,12 @@
     transition-timing-function: ease-in-out;
 }
 
+.empty-wishlist{
+    text-align: center;
+    font-size: 20px;
+    color: #6b7280;
+    margin-top: 50px;
+}
 
 
 @media (max-width: 1000px) {
@@ -235,7 +241,6 @@
         
     }
 }
-
 
 
 @media (max-width: 600px) {

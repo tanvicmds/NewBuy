@@ -143,7 +143,10 @@ async function wishlistProductsLoader() {
     const wishlistArea = document.querySelector(".wishlist-products");
     const userDetails = JSON.parse(sessionStorage.getItem("userDetails"));
     const wishlistedProducts = userDetails.user_wishlist;
-
+    if (wishlistedProducts.length === 0) {
+        wishlistArea.innerHTML = "<p class='empty-wishlist'>Your wishlist is empty.</p>";
+        return;
+    }
     wishlistArea.innerHTML = "";
 
     await Promise.all(wishlistedProducts.map((productID) => {
